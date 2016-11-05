@@ -3,7 +3,7 @@ require ("Inspired")
 require ("DeftLib")
 if myHeroName ~= "MonkeyKing" then return end
 
-local version = "0.1"
+local version = "0.2"
 
 function AutoUpdate(data)
 	if tonumber(data) > tonumber(version) then
