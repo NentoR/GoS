@@ -39,7 +39,7 @@ WuMenu.Draws:Boolean("DRE", "Draw E Range", true)
 Range_Table = {
 
       AR =  { Range = 175 },
-      Q = { Range = 175 }, 
+      Q = { Range = nil }, 
       W = { Range = 175 },
       E = { Range = 625 },
       R = { Range = 160 }
