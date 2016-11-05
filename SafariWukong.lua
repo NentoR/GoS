@@ -1,3 +1,8 @@
+
+require ("Inspired")
+require ("DeftLib")
+if myHeroName ~= "MonkeyKing" then return end
+
 local version = "0.1"
 
 function AutoUpdate(data)
@@ -9,13 +14,8 @@ function AutoUpdate(data)
 		PrintChat("[Safari Wukong] No Updates Found !")
 	end
 end
-
 GetWebResultAsync("https://raw.githubusercontent.com/NentoR/GoS/master/SafariWukong.version", AutoUpdate)
 
-
-require ("Inspired")
-require ("DeftLib")
-if myHeroName ~= "MonkeyKing" then return end
 
 local WuMenu = MenuConfig("Wukong", "Wukong")
 
