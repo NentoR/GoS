@@ -1,3 +1,16 @@
+local version = "0.1"
+
+function AutoUpdate(data)
+	if tonumber(data) > tonumber(version) then
+		PrintChat("[Safari Wukong] New version found!")
+		PrintChat("[Safari Wukong] Downloading update, please wait ...")
+		DownloadFileAsync("https://github.com/NentoR/GoS/blob/master/SafariWukong.lua", SCRIPT_PATH .. "SafariWukong.lua", function() PrintChat("[Safari Wukong] Update completed. Please 2xF6") return end)
+	else
+		PrintChat("[Safari Wukong] No Updates Found !")
+	end
+end
+
+
 require ("Inspired")
 require ("DeftLib")
 if myHeroName ~= "MonkeyKing" then return end
