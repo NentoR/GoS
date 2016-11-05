@@ -3,19 +3,19 @@ require ("Inspired")
 require ("DeftLib")
 if myHeroName ~= "MonkeyKing" then return end
 
-local version = "0.2"
+local ver = "0.1"
 
 function AutoUpdate(data)
-	if tonumber(data) > tonumber(version) then
-		PrintChat("[Safari Wukong] New version found!")
-		PrintChat("[Safari Wukong] Downloading update, please wait ...")
-		DownloadFileAsync("https://raw.githubusercontent.com/NentoR/GoS/master/SafariWukong.lua", SCRIPT_PATH .. "SafariWukong.lua", function() PrintChat("[Safari Wukong] Update completed. Please 2xF6") return end)
-	else
-		PrintChat("[Safari Wukong] No Updates Found !")
-	end
+    if tonumber(data) > tonumber(ver) then
+        PrintChat("New version found! " .. data)
+        PrintChat("Downloading update, please wait...")
+        DownloadFileAsync("https://raw.githubusercontent.com/NentoR/GoS/master/SafariWukong.lua", SCRIPT_PATH .. "SafariWukong.lua", function() PrintChat("Update Complete, please 2x F6!") return end)
+    else
+        PrintChat("No updates found!")
+    end
 end
-GetWebResultAsync("https://raw.githubusercontent.com/NentoR/GoS/master/SafariWukong.version", AutoUpdate)
 
+GetWebResultAsync("https://raw.githubusercontent.com/NentoR/GoS/master/SafariWukong.version", AutoUpdate)
 
 local WuMenu = MenuConfig("Wukong", "Wukong")
 
