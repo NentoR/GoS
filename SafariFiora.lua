@@ -1,5 +1,7 @@
 if GetObjectName(GetMyHero()) ~= "Fiora" then return end
 
+local ver = 0.1 
+
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
         PrintChat("New version found! " .. data)
