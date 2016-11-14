@@ -86,10 +86,6 @@ function Combo(target)
 		if Config.Misc.HT:Value() then
 			HydraPower(target)
 		end
-		CastE(target)
-		CastQ(target)
-		CastW(target)
-
 	    if Config.Combo.PR:Value() == 1 then
 			CastE(target)
 			CastQ(target)
