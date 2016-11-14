@@ -5,6 +5,8 @@ require("MixLib")
 require("DamageLib")
 require("OpenPredict")
 
+local ver = 0.1
+
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
         PrintChat("New version found! " .. data)
@@ -82,7 +84,7 @@ function Combo(target)
 		if Config.Misc.HT:Value() then
 			HydraPower(target)
 		end
-	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
+	    if Config.Combo.PR:Value() == 1 and OnBuff == false then
 			CastE(target)
 			CastQ(taget)
 			CastW(target)
