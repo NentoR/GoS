@@ -52,13 +52,13 @@ local ERange = 1000
 -- Rengar W buff name = RengarW
 -- Rengar E buff name = RengarE
 
-OnBuff = false 
+local OnBuff = false 
 
 local PredMyE = { delay = 0.250, speed = 1500, radius = 70, range = 1000 }
 
 OnTick(function()
 
-	target = GetCurrentTarget()
+	local target = GetCurrentTarget()
 
 	Combo(target)
 	LaneClear()
