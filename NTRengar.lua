@@ -130,8 +130,8 @@ function CastE()
 end
 
 function LaneClear()
-	for _, minion in pairs(minionManager.objects) do
 		if Mix:Mode() == "LaneClear" then
+			for _, minion in pairs(minionManager.objects) do
 			if Config.LC.LCQ:Value() and Ready(_Q) and ValidTarget(minion, QRange) then
 				CastSkillShot(_Q, minion)
 			end
