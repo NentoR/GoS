@@ -80,7 +80,7 @@ end)
 
 function Combo(target)
 	if Mix:Mode() == "Combo" then 
-		if OnBuff == true then 
+		if OnBuff == true and ValidTarget(target, 725) then 
 		    AttackUnit(target)
 	    end
 		if Config.Misc.HT:Value() then
