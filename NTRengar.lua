@@ -78,7 +78,7 @@ function Combo()
 	if Mix:Mode() == "Combo" then
 		local target = GetCurrentTarget()
 		if Config.Misc.HT:Value() then
-			HydraPower()
+			HydraPower(target)
 		end
 	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
 			CastE(target)
