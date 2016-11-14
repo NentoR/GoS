@@ -57,7 +57,9 @@ local PredMyE = { delay = 0.250, speed = 1500, radius = 70, range = 1000 }
 
 OnTick(function()
 
-	Combo()
+	target = GetCurrentTarget()
+
+	Combo(target)
 	LaneClear()
 	JungleClear()
 end)
@@ -76,7 +78,6 @@ end)
 
 function Combo()
 	if Mix:Mode() == "Combo" then
-		target = GetCurrentTarget()
 		if Config.Misc.HT:Value() then
 			HydraPower(target)
 		end
