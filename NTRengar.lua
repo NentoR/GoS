@@ -141,19 +141,20 @@ function LaneClear()
 end
 
 function JungleClear()
-	if Mix:Mode() == "LaneClear" then
-		for _, mob in pairs(minionManager.objects) do
-			if GetTeam(mob) == MINION_JUNGLE then
+		if Mix:Mode() == "LaneClear" then
+			for _, mob in pairs(minionManager.objects) do
+				if GetTeam(mob) == MINION_JUNGLE then
 
-		    if Config.JC.JCE:Value() and Ready(_E) and ValidTarget(mob, ERange) then
-				CastSkillShot(_E, mob)
+			    if Config.JC.JCE:Value() and Ready(_E) and ValidTarget(mob, ERange) then
+					CastSkillShot(_E, mob)
+				end
+				if Config.JC.JCW:Value() and Ready(_W) and ValidTarget(mob, WRange) then
+					CastSpell(_W)
+				end
+				if Config.JC.JCQ:Value() and Ready(_Q) and ValidTarget(mob, QRange) then
+			        CastSkillShot(_Q, mob)
+			    end
 			end
-			if Config.JC.JCW:Value() and Ready(_W) and ValidTarget(mob, WRange) then
-				CastSpell(_W)
-			end
-			if Config.JC.JCQ:Value() and Ready(_Q) and ValidTarget(mob, QRange) then
-		        CastSkillShot(_Q, mob)
-		    end
 		end
 	end
 end
