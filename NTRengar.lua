@@ -53,7 +53,6 @@ local ERange = 1000
 -- Rengar E buff name = RengarE
 
 OnBuff = false 
-OnBuffRemove = false
 
 local PredMyE = { delay = 0.250, speed = 1500, radius = 70, range = 1000 }
 
@@ -69,12 +68,6 @@ end)
 OnUpdateBuff(function(unit,buff)
 	if unit.isMe and buff.Name:lower() == "rengarr" then
 		OnBuff = true 
-	end
-end)
-
-OnRemoveBuff(function(unit,buff)
-	if unit.isMe and buff.Name:lower() == "rengarr" then
-		OnBuffRemove = true 
 	end
 end)
 
@@ -100,13 +93,11 @@ function Combo(target)
 end
 
 function HydraPower(target)
-	if OnBuff == true then
-		if Ready(GetItemSlot(myHero, 3077)) and ValidTarget(target, Melee) then
-			CastSpell(GetItemSlot(myHero, 3077))
-		end
-		if Ready(GetItemSlot(myHero, 3074)) and ValidTarget(target, Melee) then
-			CastSpell(GetItemSlot(myHero, 3074))
-		end
+	if Ready(GetItemSlot(myHero, 3077)) and ValidTarget(target, Melee) then
+		CastSpell(GetItemSlot(myHero, 3077))
+	end
+	if Ready(GetItemSlot(myHero, 3074)) and ValidTarget(target, Melee) then
+		CastSpell(GetItemSlot(myHero, 3074))
 	end
 end
 
