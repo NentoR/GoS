@@ -74,28 +74,28 @@ OnRemoveBuff(function(unit,buff)
 	end
 end)
 
-function Combo(target)
+function Combo()
 	if Mix:Mode() == "Combo" then
 		local target = GetCurrentTarget()
 		if Config.Misc.HT:Value() then
-			HydraPower(target)
+			HydraPower()
 		end
 	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
 			CastE(target)
 			CastQ(target)
 			CastW(target)
 		elseif Config.Combo.PR:Value() == 2 and OnBuff == false then
-			CastW(target)
-			CastE(target)
-			CastQ(target)
+			CastW()
+			CastE()
+			CastQ()
 		elseif Config.Combo.PR:Value() == 3 and OnBuff == false then
-			CastQ(target)
-			CastE(target)
-			CastW(target)
+			CastQ()
+			CastE()
+			CastW()
 		end
 	end
 
-function HydraPower(target)
+function HydraPower()
 	local target = GetCurrentTarget()
 	if OnBuff == true then
 		if Ready(GetItemSlot(myHero, 3077)) and ValidTarget(target, Melee) then
@@ -107,21 +107,21 @@ function HydraPower(target)
 	end
 end
 
-function CastQ(target)
+function CastQ()
 	local target = GetCurrentTarget()
 		if Config.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then
 			CastSkillShot(_Q, target)
 		end
 	end
 
-function CastW(target)
+function CastW()
 	local target = GetCurrentTaget()
 		if Config.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
 			CastSpell(_W)
 		end
 	end
 
-function CastE(target)
+function CastE()
 	local target = GetCurrentTarget()
 	local PredEEE = GetPrediction(target, PredMyE)
 	if Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and PredEEE.hitChance >= 0.4 then
