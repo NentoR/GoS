@@ -96,7 +96,7 @@ function Combo()
 	end
 end
 
-function HydraPower()
+function HydraPower(target)
 	if OnBuff == true then
 		if Ready(GetItemSlot(myHero, 3077)) and ValidTarget(target, Melee) then
 			CastSpell(GetItemSlot(myHero, 3077))
@@ -107,19 +107,19 @@ function HydraPower()
 	end
 end
 
-function CastQ()
+function CastQ(target)
 		if Config.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then
 			CastSkillShot(_Q, target)
 		end
 	end
 
-function CastW()
+function CastW(target)
 		if Config.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
 			CastSpell(_W)
 		end
 	end
 
-function CastE()
+function CastE(target)
 	local PredEEE = GetPrediction(target, PredMyE)
 	if Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and PredEEE.hitChance >= 0.4 then
 		CastSkillShot(_E, PredEEE.castPos)
