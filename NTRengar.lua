@@ -81,22 +81,21 @@ function Combo()
 			HydraPower()
 		end
 	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
-			CastE()
-			CastQ()
-			CastW()
+			CastE(target)
+			CastQ(taget)
+			CastW(target)
 		elseif Config.Combo.PR:Value() == 2 and OnBuff == false then
-			CastW()
-			CastE()
-			CastQ()
+			CastW(target)
+			CastE(target)
+			CastQ(target)
 		elseif Config.Combo.PR:Value() == 3 and OnBuff == false then
-			CastQ()
-			CastE()
-			CastW()
+			CastQ(target)
+			CastE(target)
+			CastW(target)
 		end
 	end
 
 function HydraPower()
-	local target = GetCurrentTarget()
 	if OnBuff == true then
 		if Ready(GetItemSlot(myHero, 3077)) and ValidTarget(target, Melee) then
 			CastSpell(GetItemSlot(myHero, 3077))
@@ -108,21 +107,18 @@ function HydraPower()
 end
 
 function CastQ()
-	local target = GetCurrentTarget()
 		if Config.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, QRange) then
 			CastSkillShot(_Q, target)
 		end
 	end
 
 function CastW()
-	local target = GetCurrentTaget()
 		if Config.Combo.W:Value() and Ready(_W) and ValidTarget(target, WRange) then
 			CastSpell(_W)
 		end
 	end
 
 function CastE()
-	local target = GetCurrentTarget()
 	local PredEEE = GetPrediction(target, PredMyE)
 	if Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and PredEEE.hitChance >= 0.4 then
 		CastSkillShot(_E, PredEEE.castPos)
@@ -144,21 +140,20 @@ function LaneClear()
 	end
 end
 
-	function JungleClear()
-		if Mix:Mode() == "LaneClear" then
-			for _, mob in pairs(minionManager.objects) do
-				if GetTeam(mob) == MINION_JUNGLE then
+function JungleClear()
+	if Mix:Mode() == "LaneClear" then
+		for _, mob in pairs(minionManager.objects) do
+			if GetTeam(mob) == MINION_JUNGLE then
 
-			    if Config.JC.JCE:Value() and Ready(_E) and ValidTarget(mob, ERange) then
-				    CastSkillShot(_E, mob)
-			    end
-			    if Config.JC.JCW:Value() and Ready(_W) and ValidTarget(mob, WRange) then
-				    CastSpell(_W)
-			    end
-			    if Config.JC.JCQ:Value() and Ready(_Q) and ValidTarget(mob, QRange) then
-				    CastSkillShot(_Q, mob)
-				end
+		    if Config.JC.JCE:Value() and Ready(_E) and ValidTarget(mob, ERange) then
+				CastSkillShot(_E, mob)
 			end
+			if Config.JC.JCW:Value() and Ready(_W) and ValidTarget(mob, WRange) then
+				CastSpell(_W)
+			end
+			if Config.JC.JCQ:Value() and Ready(_Q) and ValidTarget(mob, QRange) then
+		        CastSkillShot(_Q, mob)
+		    end
 		end
 	end
 end
