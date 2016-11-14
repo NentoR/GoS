@@ -81,9 +81,9 @@ function Combo()
 			HydraPower()
 		end
 	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
-			CastE(target)
-			CastQ(target)
-			CastW(target)
+			CastE()
+			CastQ()
+			CastW()
 		elseif Config.Combo.PR:Value() == 2 and OnBuff == false then
 			CastW()
 			CastE()
