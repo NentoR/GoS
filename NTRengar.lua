@@ -80,29 +80,23 @@ end)
 
 function Combo(target)
 	if Mix:Mode() == "Combo" then 
-		if OnBuff == true then 
-		    CastQ(target) return end
-		    CastW(target) return end
-		    CastE(target) return end
-	    end
 		if Config.Misc.HT:Value() then
 			HydraPower(target)
 		end
-	    if Config.Combo.PR:Value() == 1 then
+	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
 			CastE(target)
 			CastQ(target)
 			CastW(target)
-		elseif Config.Combo.PR:Value() == 2 then
+		elseif Config.Combo.PR:Value() == 2 and OnBuff == false then
 			CastW(target)
 			CastE(target)
 			CastQ(target)
-		elseif Config.Combo.PR:Value() == 3 then
+		elseif Config.Combo.PR:Value() == 3 and OnBuff == false then
 			CastQ(target)
 			CastE(target)
 			CastW(target)
 		end
 	end
-end
 
 function HydraPower(target)
 	if OnBuff == true then
