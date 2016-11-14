@@ -57,7 +57,7 @@ local PredMyE = { delay = 0.250, speed = 1500, radius = 70, range = 1000 }
 
 OnTick(function()
 
-	Combo(target)
+	Combo()
 	LaneClear()
 	JungleClear()
 end)
