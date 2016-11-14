@@ -94,6 +94,7 @@ function Combo()
 			CastW(target)
 		end
 	end
+end
 
 function HydraPower()
 	if OnBuff == true then
