@@ -76,11 +76,16 @@ OnRemoveBuff(function(unit,buff)
 	end
 end)
 
-function Combo()
+function Combo(target)
 	if Mix:Mode() == "Combo" then
 		if Config.Misc.HT:Value() then
 			HydraPower(target)
 		end
+
+		CastE(target)
+		CastQ(target)
+		CastW(target)
+		
 	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
 			CastE(target)
 			CastQ(taget)
