@@ -71,6 +71,12 @@ OnUpdateBuff(function(unit,buff)
 	end
 end)
 
+OnRemoveBuff(function(unit,buff)
+	if unit.isMe and buff.Name:lower() == "rengarr" then
+		OnBuff = false 
+	end
+end)
+
 function Combo(target)
 	if Mix:Mode() == "Combo" then
 		if Config.Misc.HT:Value() then
