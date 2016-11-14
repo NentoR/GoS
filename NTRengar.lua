@@ -131,9 +131,7 @@ function CastW(target)
 
 function CastE(target)
 	local PredEEE = GetPrediction(target, PredMyE)
-	if Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and OnBuff == true and PredEEE.hitChance >= 0.4 then
-		CastSkillShot(_E, PredEEE.castPos)
-	elseif OnBuff == false and Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and PredEEE.hitChance >= 0.4 then
+	if Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and PredEEE.hitChance >= 0.4 then
 		CastSkillShot(_E, PredEEE.castPos)
 	end
 end
@@ -145,7 +143,7 @@ function LaneClear()
 				CastSkillShot(_Q, minion)
 			end
 			if Config.LC.LCE:Value() and Ready(_E) and ValidTarget(minion, ERange) then
-				if GetCurrentHP(minion) < getdmg("E", minion, myHero, GetCastLevel(myHero, _Q)) then
+				if GetCurrentHP(minion) < getdmg("E", minion, myHero, GetCastLevel(myHero, _E)) then
 					CastSkillShot(_E, minion)
 				end
 			end
