@@ -1,7 +1,9 @@
+
+if GetObjectName(GetMyHero()) ~= "Rengar" then return end
+
 require("MixLib")
 require("DamageLib")
 require("OpenPredict")
-if GetObjectName(GetMyHero()) ~= "Rengar" then return end
 
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
@@ -81,11 +83,6 @@ function Combo(target)
 		if Config.Misc.HT:Value() then
 			HydraPower(target)
 		end
-
-		CastE(target)
-		CastQ(target)
-		CastW(target)
-		
 	    if Config.Combo.PR:Value() == 1 and OnBuff == false  then
 			CastE(target)
 			CastQ(taget)
