@@ -13,7 +13,7 @@ function AutoUpdate(data)
     end
 end
 
-GetWebResultAsync("https://raw.githubusercontent.com/NentoR/GoS/master/NTRengar.version", AutoUpdate) ]]
+GetWebResultAsync("https://raw.githubusercontent.com/NentoR/GoS/master/NTRengar.version", AutoUpdate)
 
 Config = MenuConfig("Rengar", "NT SERIES: Rengar")
 
