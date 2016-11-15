@@ -122,7 +122,7 @@ function CastW(target)
 
 function CastE(target)
 	local PredEEE = GetPrediction(target, PredMyE)
-	if Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and PredEEE.hitChance >= 0.4 then
+	if Config.Combo.E:Value() and Ready(_E) and ValidTarget(target, ERange) and PredEEE.hitChance >= 0.4 and not PredEEE:mCollsion(1) then
 		CastSkillShot(_E, PredEEE.castPos)
 	end
 end
