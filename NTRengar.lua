@@ -31,7 +31,6 @@ Config.Combo:DropDown("PR", "Priority", 1, {"E", "W", "Q"})
 Config:SubMenu("LC", "LaneClear")
 --
 Config.LC:Boolean("LCQ", "Use Q", true)
-Config.LC:Boolean("LCW", "Use W", true)
 Config.LC:Boolean("LCE", "Use E", true)
 
 Config:SubMenu("JC", "JungleClear")
