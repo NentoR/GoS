@@ -19,6 +19,17 @@ end
 
 GetWebResultAsync("https://raw.githubusercontent.com/NentoR/GoS/master/NTRengar.version", AutoUpdate)
 
+if FileExist(COMMON_PATH.."MixLib.lua") then 
+	require('MixLib') 
+	else 
+		PrintChat("MixLib not found. Please wait for download.") 
+
+		DownloadFileAsync("https://raw.githubusercontent.com/VTNEETS/GoS/master/MixLib.lua", COMMON_PATH.."MixLib.lua", function() PrintChat("Downloaded MixLib. Please 2x F6!")
+
+		end) 
+	return end
+
+
 Config = MenuConfig("Rengar", "NT SERIES: Rengar")
 
 Config:SubMenu("Combo", "C.O.M.B.O")
